@@ -14,9 +14,9 @@ const routeAdmin = require("./routes/admin/index.route");
 const route = require("./routes/client/index.route");
 const systemConfig = require("./config/system");
 
-app.set("views", "./views");
+app.set("views", `${__dirname}/view`);
 app.set("view engine", "pug");
-app.use(express.static("public"));
+app.use(express.static(`${__dirname}/public`));
 app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser('keyboard cat'));
